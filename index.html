@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Presupuesto</title>  
+</head>
+<body onload= "cargarApp()">
+    <div id="cabecero" class="cabecero">
+        <div class="presupuesto">
+            <div class="presupuesto_titulo">Presupuesto Disponible</div>
+            <div id="presupuesto" class="presupuesto_valor">+2,000.00</div>
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">Ingresos</div>
+                    <div class="derecha">
+                        <div id="ingresos" class="presupuesto_ingreso--valor">+4,000.00</div>
+                        <div id="porcentajeI" class="presupuesto_ingreso--porcentaje"> 55 %</div>
+                    </div>                
+            </div>
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">Egresos</div>
+                <div class="derecha limpiarEstilos">
+                    <div id="egresos" class="presupuesto_egreso--valor ">-1,900.00</div>
+                    <div id="porcentaje" class="presupuesto_egreso--porcentaje "> 45 %</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="forma" onsubmit="return false">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select name="" id="tipo" class="agregar_tipo">
+                    <option value="Ingreso" selected>+</option>
+                    <option value="Egreso">-</option>
+                </select>
+                <input class="agregar_descripcion" type="text" id="descripcion" placeholder="Agregar Descripción">
+                <input class="agregar_valor" type="number" id="valor"  placeholder="valor">
+                <button class="agregar_btn ion--ios-checkmark-circle-outline" onclick="agregarDato()"></button>
+            </div>
+        </div>
+    </form>
+    <div class="contenedor limpiarEstilos">
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingreso</h2>
+            <div id="lista-ingresos">
+                <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">salario</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor"> +2,200.00</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar_btn mdi--close-circle-outline" >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elemento limpiarEstilos"> 
+                    <div class="elemento_descripcion">Venta Coche</div>
+                        <div class="derecha limpiarEstilos">
+                            <div class="elemento_valor"> +1,500.00</div>
+                                <div class="elemento_eliminar">
+                                    <button class="elemento_eliminar_btn mdi--close-circle-outline">
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="egreso">
+            <h2 class="egreso_titulo">Egreso</h2>
+            <div id="lista-egresos">
+                <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Renta de departamento</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor"> -900.00</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar_btn mdi--close-circle-outline">
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Venta Coche</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor"> +1,500.00</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar_btn mdi--close-circle-outline">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module"> import {cargarApp} from './js/app.js'; window.cargarApp=cargarApp;</script> 
+</body>
+</html>
